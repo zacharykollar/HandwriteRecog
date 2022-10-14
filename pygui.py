@@ -1,10 +1,10 @@
-from ImageRecog import ImageRecognition
+#from ImageRecog import ImageRecognition
 import tkinter as tk
 
 
 class Button_Window:
     def __init__(self, title, starttext = "hello", endtext = "world") -> None:
-        self.model = ImageRecognition()
+        #self.model = ImageRecognition()
         self.win = tk.Tk()
         self.win.geometry("500x500")
         self.win.title(title)
@@ -19,14 +19,11 @@ class Button_Window:
     def show(self):
         self.win.mainloop()
     def button_click(self):
-        self.label.configure(text=self.model.check(self.drawing))
+        pass
         
     def draw_line(self, event):
-        x1=event.x
-        y1=event.y
-        x2=event.x
-        y2=event.y
-        self.drawing.create_oval(x1,y1,x2,y2,fill="black",width=5)
+        x1, y1, x2, y2 = ( event.x - 3 ),( event.y - 3 ), ( event.x + 3 ),( event.y + 3 )
+        self.drawing.create_line(x1,y1,x2,y2,fill="black")
 
     
 a = Button_Window("Boris")
