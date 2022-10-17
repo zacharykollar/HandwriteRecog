@@ -11,7 +11,7 @@ class Button_Window:
         self.end_text = endtext
         self.label = tk.Label(self.win, text=starttext)
         self.button = tk.Button(self.win, command=self.button_click, text="this is button")
-        self.drawing = tk.Canvas(self.win, height=256, width=256, background="white")
+        self.drawing = tk.Canvas(self.win, height=280, width=280, background="white")
         self.drawing.bind('<B1-Motion>', self.draw_line)
         self.label.pack()
         self.button.pack()
