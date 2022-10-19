@@ -1,6 +1,17 @@
 #from ImageRecog import ImageRecognition
 import tkinter as tk
+import wx
 
+class Wx_Window:
+    def __init__(self, t):
+        self.a = wx.App()
+        self.win = wx.Frame(parent=None, title=t, size = (1000, 500))
+        self.button = wx.Button(self.win, label="Button", name="FirstButton", size=(1000,100))
+        self.canvas = wx.Image(100, 500, clear=True)
+        
+        self.win.Show()
+
+        self.a.MainLoop()
 
 class Button_Window:
     def __init__(self, title, starttext = "hello", endtext = "world") -> None:
@@ -19,12 +30,10 @@ class Button_Window:
     def show(self):
         self.win.mainloop()
     def button_click(self):
-        pass
-        
+        pass     
     def draw_line(self, event):
         x1, y1, x2, y2 = ( event.x - 3 ),( event.y - 3 ), ( event.x + 3 ),( event.y + 3 )
         self.drawing.create_line(x1,y1,x2,y2,fill="black")
 
     
-a = Button_Window("Boris")
-a.show()
+a = Wx_Window("Heelo")

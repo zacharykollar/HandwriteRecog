@@ -23,6 +23,7 @@ class ImageRecognition:
         self.model.add(Activation('softmax'))
         self.model.compile(loss="categorical_crossentropy",metrics=['accuracy'],optimizer='adam')
         self.model.fit(X_train, Y_train, batch_size=256, epochs=16, verbose=2, validation_data=(X_test, Y_test))
+        
     def check(self, bitmap):
         return self.model(bitmap)
 
