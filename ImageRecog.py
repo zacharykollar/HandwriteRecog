@@ -15,16 +15,15 @@ Y_test = np_utils.to_categorical(y_test, 10)
 class ImageRecognition:
     def __init__(self):
         try:
+            raise(ArithmeticError())
             self.model = k.models.load_model('..\\savedmodel')
             print("loaded")
             self.model.summary()
         except:
             self.model = k.Sequential()
-            self.model.add(Dense(512, input_shape=(784,)))
+            self.model.add(Dense(784, input_shape=(784,)))
             self.model.add(Activation('relu'))
-            self.model.add(Dense(256))
-            self.model.add(Activation('relu'))
-            self.model.add(Dense(128))
+            self.model.add(Dense(56))
             self.model.add(Activation('relu'))
             self.model.add(Dense(10))
             self.model.add(Activation('softmax'))
