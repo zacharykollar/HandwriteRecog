@@ -15,7 +15,6 @@ Y_test = np_utils.to_categorical(y_test, 10)
 class ImageRecognition:
     def __init__(self):
         try:
-            raise(ArithmeticError())
             self.model = k.models.load_model('..\\savedmodel')
             print("loaded")
             self.model.summary()
